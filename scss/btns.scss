@@ -1,0 +1,33 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 55px;
+    @include transition(all 0.3s);
+    padding: 0 25px;
+    z-index: 5;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    &.btnPurple {
+        background-color: #d3145b;
+        color: #fff;
+        &:hover {
+            @include filter(drop-shadow($shadow));
+        }
+    }
+    &.btnFull {
+        background-color: #fff;
+        border: 2px solid #6a4b4b;
+        color: #6a4b4b;
+        &:hover {
+            @include filter(drop-shadow($shadow2));
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .btn {
+    }
+}
