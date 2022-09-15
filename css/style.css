@@ -271,13 +271,6 @@ button {
   white-space: nowrap;
   cursor: pointer;
 }
-.logoWrapper:hover {
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  -ms-filter: blur(1px);
-  -o-filter: blur(1px);
-  filter: blur(1px);
-}
 
 .linkMail {
   font-weight: 500;
@@ -309,6 +302,9 @@ button {
   -o-transition: color 0.3s;
   transition: color 0.3s;
 }
+.linkPhone .icon {
+  display: none;
+}
 .linkPhone:hover {
   color: #d3145b;
 }
@@ -317,6 +313,7 @@ button {
   position: relative;
   width: 30px;
   height: 30px;
+  min-width: 30px;
   display: block;
   background-position: center;
   background-repeat: no-repeat;
@@ -551,6 +548,12 @@ button {
   filter: drop-shadow(0px 0px 15px rgba(106, 75, 75, 0.8));
 }
 
+@media (max-width: 479px) {
+  .btn {
+    padding: 0 5px;
+    width: 100%;
+  }
+}
 .header {
   position: relative;
   z-index: 5;
@@ -890,7 +893,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background: rgba(215, 242, 216, 0.5);
+  background-color: rgba(215, 242, 216, 0.5);
   border-radius: 15px;
   margin: 15px;
   height: 360px;
@@ -931,10 +934,10 @@ button {
 }
 .recipesList .text {
   position: relative;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
   width: 100%;
   height: 100%;
   display: flex;
@@ -1237,6 +1240,7 @@ button {
 
 .forWhomList {
   display: flex;
+  flex-wrap: wrap;
   margin: -15px;
 }
 .forWhomList .item {
@@ -1246,7 +1250,7 @@ button {
   -ms-border-radius: 15px;
   border-radius: 15px;
   margin: 15px;
-  width: calc(25% - 15px);
+  width: calc(25% - 30px);
 }
 .forWhomList .item.salons {
   background-color: #d7f2d8;
@@ -1955,6 +1959,940 @@ button {
   flex-wrap: wrap;
   width: calc(50% - 89px);
   align-items: center;
+}
+
+.stepsNumbers {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 1024px;
+  }
+
+  .header .headerContent {
+    justify-content: space-between;
+  }
+  .header .title {
+    padding: 11px;
+    width: 100%;
+    order: 5;
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  .header .title br {
+    display: none;
+  }
+  .header .linkMail {
+    margin-left: 0;
+  }
+  .header .social {
+    margin-left: 0;
+  }
+  .header .linkPhone {
+    margin-left: 0;
+    margin-right: 17px;
+  }
+
+  .grettingsWrapper {
+    margin: -219px auto 0;
+  }
+
+  .grettings {
+    height: 650px;
+  }
+  .grettings .grettingsContent {
+    padding: 45px 70px 45px 20px;
+  }
+
+  .advBlock {
+    padding: 0;
+  }
+
+  .about .textRight {
+    padding: 6px 5px 6px 5px;
+  }
+
+  .recipesList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cosmeticsList {
+    padding: 0 0;
+  }
+
+  .cosmetic.cosmetic1 .plus {
+    left: 8px;
+    top: 546px;
+  }
+  .cosmetic.cosmetic1 .info {
+    left: 70px;
+    top: 585px;
+  }
+  .cosmetic.cosmetic2 .plus {
+    left: 317px;
+    top: 356px;
+  }
+  .cosmetic.cosmetic2 .info {
+    left: 385px;
+    top: 400px;
+  }
+  .cosmetic.cosmetic3 .plus {
+    left: 540px;
+    top: 610px;
+  }
+  .cosmetic.cosmetic3 .info {
+    left: 605px;
+    top: 652px;
+  }
+  .cosmetic.cosmetic4 .plus {
+    right: 216px;
+    top: 374px;
+  }
+  .cosmetic.cosmetic4 .info {
+    top: 445px;
+    right: 10px;
+  }
+  .cosmetic.cosmetic5 .plus {
+    left: 322px;
+    top: 860px;
+  }
+  .cosmetic.cosmetic5 .info {
+    left: 390px;
+    top: 900px;
+  }
+  .cosmetic.cosmetic6 .plus {
+    right: 190px;
+    top: 731px;
+  }
+  .cosmetic.cosmetic6 .info {
+    top: 803px;
+    right: -20px;
+  }
+
+  .forWhomList .item {
+    width: calc(50% - 30px);
+  }
+
+  .selectList {
+    padding: 7px 15px 33px;
+  }
+  .selectList .selectItem {
+    width: calc(50% - 68px);
+  }
+  .selectList .selectItem:nth-child(3n)::before {
+    display: block;
+  }
+  .selectList .selectItem:nth-child(2n)::before {
+    display: none;
+  }
+
+  .resultCalc {
+    padding: 25px 55px 31px;
+  }
+  .resultCalc .result {
+    width: calc(50% + 35px);
+  }
+
+  .steps {
+    padding-left: 0;
+  }
+
+  .footer .footerContent {
+    max-width: 1000px;
+  }
+  .footer .footerLeft {
+    width: calc(50% + 70px);
+  }
+  .footer .footerInfo {
+    width: calc(50% - 70px);
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .footer .social {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  .footer .linkPhone {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  .footer .adress {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row-reverse;
+    text-align: right;
+    margin-top: 15px;
+  }
+  .footer .adress .icon {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  .footer .adress br {
+    display: none;
+  }
+  .footer .copyRight {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .pageWrapper .main {
+    padding-bottom: 70px;
+  }
+  .pageWrapper .footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .sliderWrapper {
+    padding: 70px 0 12px;
+  }
+}
+@media (max-width: 1023px) {
+  .container {
+    width: 768px;
+  }
+
+  .grettings {
+    height: 767px;
+  }
+  .grettings .grettingsContent {
+    background: transparent;
+    flex-wrap: wrap;
+    padding: 45px 18px 45px 18px;
+  }
+  .grettings .grettingsContent .txt {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-border-top-left-radius: 15px;
+    -moz-border-radius-topleft: 15px;
+    -ms-border-top-left-radius: 15px;
+    border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    -ms-border-top-right-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .grettings .grettingsContent .desc {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+  .grettings .grettingsContent .grettingsContentLeft {
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .grettings .grettingsContent .grettingsContentRight {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .grettings .grettingsContent .txt {
+    padding: 15px 0;
+  }
+  .grettings .grettingsContent .txt + * {
+    margin-top: 20px;
+  }
+  .grettings .picture {
+    height: calc(50% + 64px);
+  }
+
+  .grettingsWrapper:before {
+    bottom: 230px;
+  }
+  .grettingsWrapper:after {
+    top: 80px;
+  }
+
+  .advBlock .item {
+    width: 100%;
+  }
+  .advBlock .item + .item {
+    margin-top: 36px;
+  }
+
+  .about {
+    flex-wrap: wrap;
+  }
+  .about .textLeft {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+  }
+  .about .textRight {
+    padding: 35px 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .recipesWrapper {
+    padding-top: 50px;
+  }
+
+  .vialsBlock {
+    display: none;
+  }
+
+  .cosmeticsList {
+    max-width: 480px;
+    margin: 25px auto 0;
+  }
+  .cosmeticsList .cosmetic {
+    display: block;
+  }
+
+  .cosmetic + .cosmetic {
+    margin-top: 15px;
+  }
+  .cosmetic .plus {
+    display: none;
+  }
+  .cosmetic .info {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    background: transparent;
+    border: 0;
+    max-width: 186px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 21px 1px;
+  }
+  .cosmetic .info .title {
+    display: none;
+  }
+  .cosmetic .info ul {
+    margin-top: 0;
+  }
+
+  .recipesList .title {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .resultCalc {
+    padding: 25px 25px 31px;
+  }
+  .resultCalc .contols {
+    margin-top: 20px;
+  }
+  .resultCalc .contols .btn {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  .resultCalc .contols .btn + .btn {
+    margin-top: 10px;
+  }
+
+  .selectList {
+    padding: 15px 0;
+    justify-content: space-between;
+  }
+  .selectList .selectItem {
+    width: calc(50% - 50px);
+    margin: 20px;
+  }
+
+  .cycle .list .item {
+    padding: 30px 15px 30px;
+  }
+  .cycle .list ul {
+    padding: 20px 0 26px;
+  }
+
+  .footer .footerContent {
+    position: relative;
+    padding-top: 200px;
+  }
+  .footer .footerLeft {
+    display: block;
+    width: 50%;
+  }
+  .footer .footerImg {
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+
+  .header .headerContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .header .logoWrapper {
+    grid-row: 1/3;
+  }
+  .header .social {
+    display: none;
+  }
+  .header .title {
+    grid-column: 1/3;
+  }
+  .header .linkPhone {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+  }
+  .header .linkPhone .icon {
+    display: block;
+    margin-right: 15px;
+  }
+
+  .recipes .recipesList {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .recipesList {
+    grid-template-columns: 1fr;
+  }
+  .recipesList .item {
+    margin: 15px 0;
+    height: auto;
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  .recipesList .item .title {
+    height: 170px;
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  .recipesList .item .text {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
+    display: none;
+    height: auto;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    padding-bottom: 20px;
+  }
+  .recipesList .item:hover .title {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  .recipesList .item:hover .text {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+
+  .resultCalc .result {
+    width: 100%;
+    margin-top: 38px;
+  }
+  .resultCalc .contols .btn {
+    margin-right: 14px;
+    max-width: 189px;
+    width: 100%;
+  }
+
+  .selectList .name,
+.selectList .desc {
+    text-align: center;
+  }
+  .selectList .selectItem {
+    width: 100%;
+    margin: 20px;
+  }
+  .selectList .selectItem::before {
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: block !important;
+    left: 50%;
+    top: calc(100% + 15px);
+    bottom: auto;
+    margin-left: -16px;
+  }
+  .selectList .selectItem:last-child::before {
+    display: none !important;
+  }
+  .selectList .selectItem + .selectItem {
+    margin-top: 40px;
+  }
+
+  .steps .item {
+    display: block;
+  }
+  .steps .item .picture {
+    margin: 0 auto;
+  }
+  .steps .item .picture .num {
+    display: none;
+  }
+  .steps .item .text {
+    width: 100%;
+  }
+
+  .cycle .list .item {
+    width: 100%;
+  }
+
+  .sliderReviews .review {
+    width: 100%;
+    display: block;
+    padding: 15px;
+  }
+  .sliderReviews .reviewText {
+    width: 100%;
+    padding: 0;
+    margin-top: 30px;
+  }
+  .sliderReviews .reviewImg {
+    padding-top: 62.6712328767%;
+    height: auto;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer .footerLeft {
+    width: 100%;
+  }
+  .footer .footerLeft .logoWrapper {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    height: 90px;
+  }
+  .footer .footerInfo {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .footer .title {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+    padding: 12px;
+  }
+  .footer .adress {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    text-align: left;
+    margin-top: 15px;
+    max-width: 275px;
+  }
+  .footer .adress .icon {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+  .footer .copyRight {
+    margin: 15px auto;
+  }
+  .footer .linkMail {
+    display: table;
+    margin: 0 auto;
+  }
+  .footer .linkMail .icon {
+    display: table;
+    margin: 0 auto 10px;
+  }
+
+  .offerWrapper {
+    padding: 40px 0;
+  }
+
+  .stepsNumbers {
+    display: block;
+    margin-top: 45px;
+    margin-bottom: 25px;
+  }
+  .stepsNumbers ul {
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+  }
+  .stepsNumbers .num {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    background-color: #c2b6b6;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stepsNumbers .num.active {
+    background-color: #d3145b;
+  }
+}
+@media (max-width: 639px) {
+  .header .logoWrapper {
+    width: 200px;
+  }
+
+  .forWhomList .item {
+    width: 100%;
+  }
+
+  .grettingsWrapper {
+    margin: -260px auto 0;
+  }
+  .grettingsWrapper:before {
+    left: -80px;
+  }
+  .grettingsWrapper:after {
+    right: -40px;
+  }
+
+  .resultCalc .contols .btn {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .cycleWrapper .siteTitle {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 479px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 20px 0;
+  }
+  .header .headerContent {
+    grid-template-rows: 36px 36px;
+    align-items: start;
+  }
+  .header .title {
+    grid-row: 3/4;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .header .logoWrapper {
+    width: 150px;
+    height: 100%;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -ms-border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px;
+  }
+  .header .logoWrapper img {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    max-width: 76%;
+  }
+  .header .linkMail {
+    padding: 6px 0;
+    font-size: 12px;
+  }
+  .header .linkMail .icon {
+    margin-right: 8px;
+  }
+  .header .linkPhone {
+    padding: 6px 0;
+    font-size: 12px;
+  }
+  .header .linkPhone .icon {
+    margin-right: 8px;
+  }
+  .header .icon {
+    width: 23px;
+    height: 23px;
+    background-size: contain;
+  }
+
+  .grettings {
+    height: 782px;
+  }
+  .grettings .grettingsContent .txt {
+    font-size: 30px;
+    line-height: 36px;
+    padding: 12px 0 19px;
+  }
+  .grettings .grettingsContent .txt + * {
+    margin-top: 0;
+  }
+  .grettings .grettingsContent .desc {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .grettings .grettingsContent .grettingsContentRight {
+    margin-top: 30px;
+  }
+  .grettings .grettingsContent .grettingsContentRight::before {
+    right: -33px;
+  }
+  .grettings .grettingsContent .grettingsContentRight .btn {
+    margin-top: 20px;
+    left: -34px;
+  }
+  .grettings .picture {
+    height: calc(50% + 73px);
+  }
+
+  .advBlockWrapper {
+    padding: 39px 0px;
+  }
+
+  .advBlock .item {
+    padding: 0 15px;
+  }
+
+  .aboutWrapper {
+    padding: 0;
+  }
+
+  .about .textLeft {
+    padding: 19px 22px;
+  }
+  .about .textRight {
+    padding: 41px 0;
+  }
+
+  .recipesList .item {
+    margin: 10px 0;
+  }
+  .recipesList .text .line {
+    padding: 0 8px;
+  }
+  .recipesList .text .line .num {
+    width: 75px;
+  }
+
+  .cosmeticsWrapper {
+    padding-top: 90px;
+  }
+
+  .cosmetic .info {
+    padding: 38px 1px 47px;
+  }
+  .cosmetic .info .link {
+    margin-top: 31px;
+  }
+
+  .forWhomWrapper {
+    padding-top: 64px;
+  }
+  .forWhomWrapper .btn {
+    margin-top: 48px;
+  }
+
+  .forWhomList .item {
+    padding: 22px 15px 19px;
+    margin: 11px 15px;
+  }
+  .forWhomList .item .name {
+    min-height: 68px;
+  }
+
+  .calcWrapper {
+    padding-top: 70px;
+  }
+
+  .selectList {
+    padding: 24px 0;
+  }
+  .selectList .inputWrapper {
+    margin-top: 14px;
+  }
+  .selectList .selectItem {
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+  }
+  .selectList .selectItem .name {
+    white-space: normal;
+  }
+  .selectList .selectItem::before {
+    top: calc(100% + 25px);
+  }
+  .selectList .selectItem + .selectItem {
+    margin-top: 83px;
+  }
+  .selectList .desc {
+    margin-top: 16px;
+  }
+
+  .resultCalc {
+    padding: 21px 25px 31px;
+  }
+  .resultCalc .result {
+    margin-top: 35px;
+  }
+  .resultCalc ul {
+    margin-top: 28px;
+  }
+  .resultCalc ul li .tit {
+    width: 70%;
+  }
+  .resultCalc .contols {
+    margin-top: 41px;
+  }
+
+  .stepsWrapper {
+    padding-top: 72px;
+  }
+
+  .offerWrapper {
+    padding: 40px 0 89px;
+  }
+
+  .offer {
+    padding: 25px 15px 22px;
+  }
+  .offer .controls {
+    margin-top: 64px;
+  }
+  .offer .controls .btn {
+    left: 0;
+    padding: 16px 0;
+    line-height: 25px;
+    width: 100%;
+  }
+  .offer .controls::before {
+    right: 50%;
+    bottom: 54px;
+    width: 85px;
+    height: 82px;
+    z-index: 6;
+    background-size: contain;
+    pointer-events: none;
+    margin-right: -42px;
+  }
+
+  .cycleWrapper:before {
+    top: 110px;
+  }
+
+  .cycle .list .item {
+    padding: 20px 25px;
+    margin: 10px 0;
+  }
+  .cycle .list .title {
+    text-align: center;
+    min-height: inherit;
+  }
+  .cycle .list ul {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .sliderProjects .projectName {
+    max-width: 80%;
+  }
+  .sliderProjects .projectInfo {
+    padding: 19px 10px 19px 30px;
+  }
+
+  .slick-prev {
+    margin: 0 !important;
+    left: 15px;
+  }
+
+  .slick-next {
+    margin: 0 !important;
+    left: auto;
+    right: 15px;
+  }
+
+  .sliderWrapper {
+    padding: 62px 0 14px;
+  }
+  .sliderWrapper .btn {
+    margin: 53px auto 0;
+    max-width: 90%;
+  }
+
+  .footer .footerImg {
+    height: 124px;
+    top: 13px;
+    background-position: center;
+    background-size: contain;
+  }
+  .footer .title {
+    padding: 12px;
+    line-height: 18px;
+  }
+  .footer .adress {
+    margin-top: 20px;
+  }
+  .footer .footerLeft .logoWrapper {
+    height: 58px;
+  }
+  .footer .footerLeft .logoWrapper img {
+    width: 100%;
+    object-fit: contain;
+    max-width: 38%;
+  }
+  .footer .footerInfo {
+    padding: 11px 0;
+  }
+  .footer .footerContent {
+    padding-top: 150px;
+  }
+
+  .pageWrapper .main {
+    padding-bottom: 55px;
+  }
+  .pageWrapper .footer {
+    padding-bottom: 24px;
+  }
+}
+@media (max-width: 359px) {
+  .container {
+    padding: 0 5px;
+  }
+
+  .cycle .list .btn {
+    white-space: nowrap;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .stepsNumbers ul {
+    gap: 15px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

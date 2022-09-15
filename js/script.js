@@ -8,16 +8,17 @@ $(document).ready(function () {
         let slider = $('.sliderProjects')
         let countItem = $('.sliderProjects .item').length
 
+        if (countItem <= 1) {
+            slider.addClass('not-dots')
+        }
+
         slider.slick({
+            infinite: false,
+            initialSlide: initialSlideSliders(countItem),
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
         });
-
-
-        if (countItem <= 1) {
-            slider.addClass('not-dots')
-        }
 
         dotsSliderPosition(slider)
 
@@ -28,15 +29,17 @@ $(document).ready(function () {
         let slider = $('.sliderReviews')
         let countItem = $('.sliderReviews .item').length
 
+        if (countItem <= 1) {
+            slider.addClass('not-dots')
+        }
+
         slider.slick({
+            infinite: false,
+            initialSlide: initialSlideSliders(countItem),
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
         });
-
-        if (countItem <= 1) {
-            slider.addClass('not-dots')
-        }
 
         dotsSliderPosition(slider)
     }
@@ -46,17 +49,75 @@ $(document).ready(function () {
         let slider = $('.sliderGallery')
         let countItem = $('.sliderGallery .item').length
 
+        if (countItem <= 1) {
+            slider.addClass('not-dots')
+        }
+
         slider.slick({
+            infinite: false,
+            initialSlide: initialSlideSliders(countItem),
             slidesToShow: 1,
             slidesToScroll: 1,
             dots: true,
         });
 
-        if (countItem <= 1) {
-            slider.addClass('not-dots')
+        dotsSliderPosition(slider)
+    }
+
+    if ($('.steps').length > 0) {
+        if ($(window).width() < 768) {
+            let slider = $('.steps')
+            let countItem = $('.steps .item').length
+
+            if (countItem <= 1) {
+                slider.addClass('not-dots')
+            }
+
+            slider.slick({
+                initialSlide: 0,
+                infinite: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                adaptiveHeight: true,
+                responsive: [
+                    {
+                        breakpoint: 10000,
+                        settings: "unslick"
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    },
+                ]
+            });
+
+            slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                $('.stepsNumbers .num').removeClass('active')
+                $('.stepsNumbers .num').map(function () {
+                    if (nextSlide == $(this).attr('data-slide')) {
+                        $(this).addClass('active')
+                    }
+                })
+            });
+
+            if ($('.stepsNumbers').length > 0) {
+                $('.stepsNumbers .num').map(function () {
+                    $(this).click(function () {
+                        $('.stepsNumbers .num').removeClass('active')
+                        let slide = $(this).attr('data-slide');
+                        slider.slick('slickGoTo', slide);
+                        $(this).addClass('active')
+                    })
+                })
+            }
+
+            dotsSliderPosition(slider)
         }
 
-        dotsSliderPosition(slider)
     }
 
     if ($('.cosmetics').length > 0) {
@@ -82,31 +143,43 @@ $(document).ready(function () {
 
     }
 
-    // if ($('.slideItem').length > 0) {
-    //     $('.slideItem').map(function () {
-    //         let head = $(this).find('.slideHead')
-    //         let content = $(this).find('.slideContent')
+    if ($('.recipesList').length > 0) {
+        $('.recipesList .item').map(function () {
+            let head = $(this).find('.title')
+            let content = $(this).find('.text')
 
-    //         if (head.hasClass('opened')) {
-    //             content.stop().slideDown()
-    //         }
 
-    //         head.on('click', function () {
-    //             if (head.hasClass('opened')) {
-    //                 content.stop().slideUp()
-    //                 head.removeClass('opened')
-    //             } else {
-    //                 content.stop().slideDown()
-    //                 head.addClass('opened')
-    //             }
-    //         })
-    //     })
-    // }
+
+            if (head.hasClass('opened')) {
+                content.stop().slideDown()
+            }
+
+            head.on('click', function () {
+
+                $('.recipesList .item .title').removeClass('opened')
+                $('.recipesList .item .text').stop().slideUp()
+
+                if (head.hasClass('opened')) {
+                    content.stop().slideUp()
+                    head.removeClass('opened')
+                } else {
+                    content.stop().slideDown()
+                    head.addClass('opened')
+                }
+            })
+        })
+    }
 
 })
 
 $(window).resize(function () {
-
+    if ($('.steps').length > 0) {
+        if ($(window).width() < 768) {
+            let slider = $('.steps')
+            slider.not('.slick-initialized').slick('refresh');
+            dotsSliderPosition(slider)
+        }
+    }
 });
 
 
@@ -131,5 +204,16 @@ function dotsSliderPosition(parents) {
 
     prev.css('margin-left', -dotsPosition - 50)
     next.css('margin-left', dotsPosition + 50)
+
+}
+
+function initialSlideSliders(count) {
+
+    if (count <= 2) {
+        count = 0
+    } else {
+        count = Math.floor(count / 2)
+    }
+    return count
 
 }

@@ -27,7 +27,9 @@
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 479px) {
     .btn {
+        padding: 0 5px;
+        width: 100%;
     }
 }

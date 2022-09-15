@@ -61,9 +61,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    &:hover {
-        @include filter(blur(1px));
-    }
 }
 
 .linkMail {
@@ -89,6 +86,9 @@ button {
     text-transform: uppercase;
     color: #6a4b4b;
     @include transition(color 0.3s);
+    .icon {
+        display: none;
+    }
     &:hover {
         color: #d3145b;
     }
@@ -98,6 +98,7 @@ button {
     position: relative;
     width: 30px;
     height: 30px;
+    min-width: 30px;
     display: block;
     background-position: center;
     background-repeat: no-repeat;
