@@ -6,7 +6,6 @@ $(document).ready(function () {
         awaitCloseAnimation: true
     })
 
-
     if ($('.selectric').length > 0) {
         $('.selectric').selectric();
     }

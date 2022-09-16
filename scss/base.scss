@@ -322,3 +322,10 @@ button {
     max-width: 600px;
     @include border-radius(20px);
 }
+
+input,
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
