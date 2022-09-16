@@ -9,7 +9,10 @@
     z-index: 5;
     text-align: center;
     border: 2px solid transparent;
-    border-radius: 100px;
+    @include border-radius(100px);
+    webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     &.btnPurple {
         background-color: #d3145b;
         color: #fff;

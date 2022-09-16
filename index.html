@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="css/selectric.css" />
     <link rel='stylesheet' type='text/css' href='css/slick.css'>
+    <link rel='stylesheet' type='text/css' href='css/micromodal.css'>
     <link rel='stylesheet' type='text/css' href='css/style.css'>
 
 </head>
@@ -64,7 +65,7 @@
                                 <span class="num">1</span>
                                 <span class="text">день</span>
                             </div>
-                            <a href="#" class="btn btnPurple">Получить условия</a>
+                            <button class="btn btnPurple" data-custom-open="modal-1">Получить условия</button>
                         </div>
                     </div>
                     <div class="picture" style="background-image: url(img/grettings.jpg)"></div>
@@ -310,19 +311,6 @@
                                 </div>
                             </div>
                             <div class="cosmetic cosmetic3">
-                                <a href="#" class="name">Очищение кожи лица</a>
-                                <span class="plus">+</span>
-                                <div class="info">
-                                    <span class="title">Очищение кожи лица:</span>
-                                    <ul>
-                                        <li>шампуни</li>
-                                        <li>бальзамы</li>
-                                        <li>маски</li>
-                                    </ul>
-                                    <a href="#" class="link">Узнать подробности</a>
-                                </div>
-                            </div>
-                            <div class="cosmetic cosmetic4">
                                 <a href="#" class="name">Увлажнение и питание кожи лица</a>
                                 <span class="plus">+</span>
                                 <div class="info">
@@ -335,11 +323,24 @@
                                     <a href="#" class="link">Узнать подробности</a>
                                 </div>
                             </div>
-                            <div class="cosmetic cosmetic5">
+                            <div class="cosmetic cosmetic4">
                                 <a href="#" class="name">Антицеллюлитный уход для тела</a>
                                 <span class="plus">+</span>
                                 <div class="info">
-                                    <span class="title">Антицеллюлитный уход для тела:</span>
+                                    <span class="title">Антицеллюлитный уход для тела</span>
+                                    <ul>
+                                        <li>шампуни</li>
+                                        <li>бальзамы</li>
+                                        <li>маски</li>
+                                    </ul>
+                                    <a href="#" class="link">Узнать подробности</a>
+                                </div>
+                            </div>
+                            <div class="cosmetic cosmetic5">
+                                <a href="#" class="name">Очищение кожи лица</a>
+                                <span class="plus">+</span>
+                                <div class="info">
+                                    <span class="title">Очищение кожи лица:</span>
                                     <ul>
                                         <li>шампуни</li>
                                         <li>бальзамы</li>
@@ -410,10 +411,10 @@
                                 <span class="name"><span class="num">1.</span>Продукт</span>
                                 <span class="desc">Выберите проудукт для производства</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Крем</option>
-                                        <option value="">Крем</option>
-                                        <option value="">Крем</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Крем">Крем</option>
+                                        <option value="Крем">Крем</option>
+                                        <option value="Крем">Крем</option>
                                     </select>
                                 </div>
                             </div>
@@ -421,10 +422,10 @@
                                 <span class="name"><span class="num">2.</span>База</span>
                                 <span class="desc">Это базовые элементы</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Гелевая экобаза</option>
-                                        <option value="">Гелевая экобаза</option>
-                                        <option value="">Гелевая экобаза</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Гелевая экобаза">Гелевая экобаза</option>
+                                        <option value="Гелевая экобаза">Гелевая экобаза</option>
+                                        <option value="Гелевая экобаза">Гелевая экобаза</option>
                                     </select>
                                 </div>
                             </div>
@@ -432,10 +433,10 @@
                                 <span class="name"><span class="num">3.</span>Экстракты</span>
                                 <span class="desc">Выберите до 10 экстрактов, зажав Ctrl</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Ананас экстракт</option>
-                                        <option value="">Ананас экстракт</option>
-                                        <option value="">Ананас экстракт</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Ананас экстракт">Ананас экстракт</option>
+                                        <option value="Ананас экстракт">Ананас экстракт</option>
+                                        <option value="Ананас экстракт">Ананас экстракт</option>
                                     </select>
                                 </div>
                             </div>
@@ -443,10 +444,10 @@
                                 <span class="name"><span class="num">4.</span>Функциональные добавки</span>
                                 <span class="desc">Выберите функциональные добавки</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Капсикум (красный перец)</option>
-                                        <option value="">Капсикум (красный перец)</option>
-                                        <option value="">Капсикум (красный перец)</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Капсикум (красный перец)">Капсикум (красный перец)</option>
+                                        <option value="Капсикум (красный перец)">Капсикум (красный перец)</option>
+                                        <option value="Капсикум (красный перец)">Капсикум (красный перец)</option>
                                     </select>
                                 </div>
                             </div>
@@ -454,10 +455,10 @@
                                 <span class="name"><span class="num">5.</span>Консервант</span>
                                 <span class="desc">Добавляем консервант</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Натуральный</option>
-                                        <option value="">Натуральный</option>
-                                        <option value="">Натуральный</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Натуральный">Натуральный</option>
+                                        <option value="Натуральный">Натуральный</option>
+                                        <option value="Натуральный">Натуральный</option>
                                     </select>
                                 </div>
                             </div>
@@ -465,10 +466,10 @@
                                 <span class="name"><span class="num">6.</span>Аромат</span>
                                 <span class="desc">Выберите подходящий аромат</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Отдушка косметическая</option>
-                                        <option value="">Отдушка косметическая</option>
-                                        <option value="">Отдушка косметическая</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Отдушка косметическая">Отдушка косметическая</option>
+                                        <option value="Отдушка косметическая">Отдушка косметическая</option>
+                                        <option value="Отдушка косметическая">Отдушка косметическая</option>
                                     </select>
                                 </div>
                             </div>
@@ -476,10 +477,10 @@
                                 <span class="name"><span class="num">7.</span>Флаконы</span>
                                 <span class="desc">Нужно выбрать объём тары</span>
                                 <div class="inputWrapper">
-                                    <select class="selectric">
-                                        <option value="">Банка ПЭТ+крышка, 250 мл</option>
-                                        <option value="">Банка ПЭТ+крышка, 250 мл</option>
-                                        <option value="">Банка ПЭТ+крышка, 250 мл</option>
+                                    <select class="selectric" multiple="multiple">
+                                        <option value="Банка ПЭТ+крышка, 250 мл">Банка ПЭТ+крышка, 250 мл</option>
+                                        <option value="Банка ПЭТ+крышка, 250 мл">Банка ПЭТ+крышка, 250 мл</option>
+                                        <option value="Банка ПЭТ+крышка, 250 мл">Банка ПЭТ+крышка, 250 мл</option>
                                     </select>
                                 </div>
                             </div>
@@ -1007,12 +1008,47 @@
                 </div>
             </div>
         </footer>
+        <div class="micromodal-slide modal" id="modal-1" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close="">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="modal__content" id="modal-1-content">
+                        <form class="modalBlock">
+                            <h2 class="cap">Заполните форму
+                                и кратко опишите ваш запрос</h2>
+                            <span class="text">Мы свяжемся с Вами в ближайшее время и расскажем, с чего начать
+                                разработку собственного косметического бренда.
+                            </span>
+                            <div class="inputList">
+                                <div class="inputWrapper">
+                                    <label for="">Имя</label>
+                                    <input type="text" placeholder="Введите ваше имя">
+                                </div>
+                                <div class="inputWrapper">
+                                    <label for="">Телефон</label>
+                                    <input type="text" placeholder="Введите ваш телефон">
+                                </div>
+                                <div class="inputWrapper">
+                                    <label for="">Ваш запрос / идея</label>
+                                    <textarea placeholder="Введите ваш запрос"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btnPurple">Узнать подробности</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
 <script type='text/javascript' src='js/jquery-3.6.0.min.js'></script>
 <script type='text/javascript' src='js/jquery.selectric.min.js'></script>
 <script type='text/javascript' src='js/slick.min.js'></script>
+<script type='text/javascript' src='js/micromodal.min.js'></script>
 <script type='text/javascript' src='js/script.js'></script>
 
 </html>

@@ -336,6 +336,7 @@ button {
 }
 
 .siteTitle {
+  position: relative;
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -365,6 +366,52 @@ button {
 
 .inputWrapper {
   position: relative;
+}
+.inputWrapper label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  display: block;
+  color: #6a4b4b;
+  margin-bottom: 8px;
+  padding-left: 12px;
+}
+.inputWrapper input {
+  background-color: #fff;
+  border: 1px solid #c2b6b6;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  height: 55px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #6a4b4b;
+  padding: 0 17px;
+}
+.inputWrapper input::placeholder {
+  color: #c2b6b6;
+}
+.inputWrapper textarea {
+  resize: none;
+  height: 185px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #c2b6b6;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #6a4b4b;
+  padding: 20px 17px;
+}
+.inputWrapper textarea::placeholder {
+  color: #c2b6b6;
 }
 .inputWrapper .selectric {
   width: 100%;
@@ -425,7 +472,7 @@ button {
   font-size: 16px;
   line-height: 18px;
 }
-.selectric-items li.highlighted {
+.selectric-items li.selected, .selectric-items li.highlighted {
   background-color: #d3145b;
   color: #fff;
 }
@@ -509,6 +556,24 @@ button {
   background: #d3145b;
 }
 
+.modal {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+  z-index: 10;
+}
+
+.modal__container {
+  padding: 15px 60px;
+  max-width: 600px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+
 .btn {
   position: relative;
   display: inline-block;
@@ -523,7 +588,13 @@ button {
   z-index: 5;
   text-align: center;
   border: 2px solid transparent;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
   border-radius: 100px;
+  webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .btn.btnPurple {
   background-color: #d3145b;
@@ -1966,6 +2037,68 @@ button {
   display: none;
 }
 
+.modalBlock .cap {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #6a4b4b;
+}
+.modalBlock .text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #6a4b4b;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modalBlock .inputList {
+  margin-top: 50px;
+}
+.modalBlock .inputWrapper + .inputWrapper {
+  margin-top: 23px;
+}
+.modalBlock .btn {
+  width: 100%;
+  margin-top: 36px;
+}
+
+.modal__close {
+  position: absolute;
+  width: 27px;
+  display: block;
+  right: 27px;
+  top: 35px;
+}
+.modal__close span {
+  display: block;
+  background-color: #c2b6b6;
+  width: 100%;
+  height: 3px;
+  position: relative;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.modal__close span + span {
+  top: -2px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 @media (max-width: 1199px) {
   .container {
     width: 1024px;
@@ -2461,6 +2594,9 @@ button {
     width: 100%;
   }
 
+  .sliderReviews {
+    max-width: 355px;
+  }
   .sliderReviews .review {
     width: 100%;
     display: block;
@@ -2472,7 +2608,7 @@ button {
     margin-top: 30px;
   }
   .sliderReviews .reviewImg {
-    padding-top: 62.6712328767%;
+    padding-top: 103.1802120141%;
     height: auto;
     width: 100%;
     max-width: 320px;
@@ -2588,6 +2724,16 @@ button {
 
   .cycleWrapper .siteTitle {
     padding: 0 15px;
+  }
+
+  .modal__container {
+    padding: 15px 15px;
+  }
+
+  .forWhomWrapper:before {
+    left: -40px;
+    top: 0px;
+    bottom: auto;
   }
 }
 @media (max-width: 479px) {
@@ -2893,6 +3039,10 @@ button {
 
   .stepsNumbers ul {
     gap: 15px;
+  }
+
+  .cosmetic .name {
+    font-size: 15px;
   }
 }
 

@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    MicroModal.init({
+        openTrigger: 'data-custom-open',
+        disableScroll: false,
+        awaitCloseAnimation: true
+    })
+
+
     if ($('.selectric').length > 0) {
         $('.selectric').selectric();
     }
@@ -73,27 +80,7 @@ $(document).ready(function () {
                 slider.addClass('not-dots')
             }
 
-            slider.slick({
-                initialSlide: 0,
-                infinite: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                adaptiveHeight: true,
-                responsive: [
-                    {
-                        breakpoint: 10000,
-                        settings: "unslick"
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
-                ]
-            });
+            stepSliderInit()
 
             slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
                 $('.stepsNumbers .num').removeClass('active')
@@ -176,7 +163,8 @@ $(window).resize(function () {
     if ($('.steps').length > 0) {
         if ($(window).width() < 768) {
             let slider = $('.steps')
-            slider.not('.slick-initialized').slick('refresh');
+            // slider.not('.slick-initialized').slick('refresh');
+            stepSliderInit()
             dotsSliderPosition(slider)
         }
     }
@@ -216,4 +204,28 @@ function initialSlideSliders(count) {
     }
     return count
 
+}
+
+function stepSliderInit() {
+    $('.steps').not('.slick-initialized').slick({
+        initialSlide: 0,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 10000,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
+    });
 }

@@ -531,6 +531,8 @@
     }
 
     .sliderReviews {
+        max-width: 355px;
+
         .review {
             width: 100%;
             display: block;
@@ -542,7 +544,7 @@
             margin-top: 30px;
         }
         .reviewImg {
-            padding-top: calc(183 / 292 * 100%);
+            padding-top: calc(292 / 283 * 100%);
             height: auto;
             width: 100%;
             max-width: 320px;
@@ -666,6 +668,18 @@
     .cycleWrapper {
         .siteTitle {
             padding: 0 15px;
+        }
+    }
+
+    .modal__container {
+        padding: 15px 15px;
+    }
+
+    .forWhomWrapper {
+        &:before {
+            left: -40px;
+            top: 0px;
+            bottom: auto;
         }
     }
 }
@@ -1006,6 +1020,12 @@
     .stepsNumbers {
         ul {
             gap: 15px;
+        }
+    }
+
+    .cosmetic {
+        .name {
+            font-size: 15px;
         }
     }
 }

@@ -120,6 +120,7 @@ button {
 }
 
 .siteTitle {
+    position: relative;
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
@@ -149,6 +150,46 @@ button {
 
 .inputWrapper {
     position: relative;
+    label {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+        display: block;
+        color: #6a4b4b;
+        margin-bottom: 8px;
+        padding-left: 12px;
+    }
+    input {
+        background-color: #fff;
+        border: 1px solid #c2b6b6;
+        @include border-radius(10px);
+        width: 100%;
+        height: 55px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #6a4b4b;
+        padding: 0 17px;
+        &::placeholder {
+            color: #c2b6b6;
+        }
+    }
+    textarea {
+        resize: none;
+        height: 185px;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #c2b6b6;
+        @include border-radius(10px);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #6a4b4b;
+        padding: 20px 17px;
+        &::placeholder {
+            color: #c2b6b6;
+        }
+    }
     .selectric {
         width: 100%;
         height: 55px;
@@ -198,6 +239,7 @@ button {
         font-weight: 500;
         font-size: 16px;
         line-height: 18px;
+        &.selected,
         &.highlighted {
             background-color: #d3145b;
             color: #fff;
@@ -264,4 +306,19 @@ button {
             }
         }
     }
+}
+
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+    z-index: 10;
+}
+
+.modal__container {
+    padding: 15px 60px;
+    max-width: 600px;
+    @include border-radius(20px);
 }

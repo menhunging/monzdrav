@@ -1276,3 +1276,61 @@
 .stepsNumbers {
     display: none;
 }
+
+.modalBlock {
+    .cap {
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 30px;
+        display: block;
+        text-align: center;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #6a4b4b;
+    }
+    .text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        display: block;
+        text-align: center;
+        margin-top: 30px;
+        color: #6a4b4b;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .inputList {
+        margin-top: 50px;
+    }
+    .inputWrapper {
+        & + .inputWrapper {
+            margin-top: 23px;
+        }
+    }
+    .btn {
+        width: 100%;
+        margin-top: 36px;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    width: 27px;
+    display: block;
+    right: 27px;
+    top: 35px;
+    span {
+        display: block;
+        background-color: #c2b6b6;
+        width: 100%;
+        height: 3px;
+        position: relative;
+        @include transform(rotate(-45deg));
+        & + span {
+            top: -2px;
+            @include transform(rotate(45deg));
+        }
+    }
+}
