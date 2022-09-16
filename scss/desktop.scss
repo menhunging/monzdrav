@@ -708,13 +708,24 @@
                 display: none;
             }
         }
+        &.selected {
+            &::before {
+                background-color: #90e994;
+            }
+        }
         @include before {
             left: calc(100% + 15px);
             bottom: 12px;
             background-image: url("../img/arrow_calc.png");
+            background-position: center;
             background-repeat: no-repeat;
-            width: 35px;
+            width: 34px;
             height: 34px;
+            background-color: #d7f2d8;
+            @include border-radius(50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
     .name {

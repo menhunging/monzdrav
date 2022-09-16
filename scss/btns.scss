@@ -17,7 +17,7 @@
         background-color: #d3145b;
         color: #fff;
         &:hover {
-            @include filter(drop-shadow($shadow));
+            background-color: #9A063D;
         }
     }
     &.btnFull {

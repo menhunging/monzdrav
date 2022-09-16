@@ -116,13 +116,12 @@ $(document).ready(function () {
             name.on('click', function (e) {
                 e.preventDefault()
                 cosmeticsClickhandler($(this))
-                $(this).parents('.cosmetic').find('.plus').stop().addClass('open')
             })
 
             plus.on('click', function (e) {
                 e.preventDefault()
                 cosmeticsClickhandler($(this))
-                $(this).parents('.cosmetic').find('.name').stop().addClass('open')
+
             })
 
         })
@@ -176,11 +175,21 @@ function cosmeticsClickhandler(event) {
     let infoCosmetic = $('.cosmetic .info')
     let parents = event.parents('.cosmetic')
 
-    nameCosmetic.removeClass('open')
-    plusCosmetic.removeClass('open')
-    infoCosmetic.stop().slideUp()
-    event.stop().addClass('open')
-    parents.find('.info').stop().slideDown()
+    if (event.hasClass('open')) {
+        nameCosmetic.removeClass('open')
+        plusCosmetic.removeClass('open')
+        infoCosmetic.stop().slideUp()
+    } else {
+        nameCosmetic.removeClass('open')
+        plusCosmetic.removeClass('open')
+        infoCosmetic.stop().slideUp()
+
+        event.stop().addClass('open')
+        parents.find('.plus').stop().addClass('open')
+        parents.find('.name').stop().addClass('open')
+        parents.find('.info').stop().slideDown()
+    }
+
 }
 
 function dotsSliderPosition(parents) {
