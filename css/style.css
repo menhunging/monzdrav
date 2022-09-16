@@ -1295,8 +1295,9 @@ button {
 .forWhomWrapper .forWhomList {
   margin-top: 36px;
 }
-.forWhomWrapper .btn {
+.forWhomWrapper .controls {
   margin: 65px auto 0;
+  text-align: center;
 }
 .forWhomWrapper:before {
   content: "";
@@ -1830,9 +1831,9 @@ button {
 .sliderWrapper .siteTitle {
   max-width: 100%;
 }
-.sliderWrapper .btn {
-  display: table;
+.sliderWrapper .controls {
   margin: 76px auto 0;
+  text-align: center;
 }
 .sliderWrapper .slick-list {
   overflow: visible;
@@ -2865,7 +2866,7 @@ button {
   .forWhomWrapper {
     padding-top: 64px;
   }
-  .forWhomWrapper .btn {
+  .forWhomWrapper .controls {
     margin-top: 48px;
   }
 
@@ -2990,7 +2991,7 @@ button {
   .sliderWrapper {
     padding: 62px 0 14px;
   }
-  .sliderWrapper .btn {
+  .sliderWrapper .controls {
     margin: 53px auto 0;
     max-width: 90%;
   }

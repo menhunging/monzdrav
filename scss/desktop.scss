@@ -603,9 +603,13 @@
     .forWhomList {
         margin-top: 36px;
     }
-    .btn {
+    .controls {
         margin: 65px auto 0;
+        text-align: center;
+        .btn {
+        }
     }
+
     @include before {
         background-image: url("../img/forwhom-petal.png");
         left: 0px;
@@ -1063,9 +1067,11 @@
     .siteTitle {
         max-width: 100%;
     }
-    .btn {
-        display: table;
+    .controls {
         margin: 76px auto 0;
+        text-align: center;
+        .btn {
+        }
     }
     .slick-list {
         overflow: visible;
