@@ -72,11 +72,11 @@
     max-width: 1371px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 100px;
     .grettingsContent {
         position: relative;
         background: rgba(255, 255, 255, 0.7);
-        @include border-radius-top-left(15px);
-        @include border-radius-top-right(15px);
+        @include border-radius(15px);
         max-width: 1140px;
         width: 100%;
         margin-left: auto;
