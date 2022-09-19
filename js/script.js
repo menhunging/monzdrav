@@ -71,9 +71,10 @@ $(document).ready(function () {
     }
 
     if ($('.steps').length > 0) {
+        let slider = $('.steps')
+        let countItem = $('.steps .item').length
+
         if ($(window).width() < 768) {
-            let slider = $('.steps')
-            let countItem = $('.steps .item').length
 
             if (countItem <= 1) {
                 slider.addClass('not-dots')
@@ -90,18 +91,18 @@ $(document).ready(function () {
                 })
             });
 
-            if ($('.stepsNumbers').length > 0) {
-                $('.stepsNumbers .num').map(function () {
-                    $(this).click(function () {
-                        $('.stepsNumbers .num').removeClass('active')
-                        let slide = $(this).attr('data-slide');
-                        slider.slick('slickGoTo', slide);
-                        $(this).addClass('active')
-                    })
-                })
-            }
-
             dotsSliderPosition(slider)
+        }
+
+        if ($('.stepsNumbers').length > 0) {
+            $('.stepsNumbers .num').map(function () {
+                $(this).click(function () {
+                    $('.stepsNumbers .num').removeClass('active')
+                    let slide = $(this).attr('data-slide');
+                    slider.slick('slickGoTo', slide);
+                    $(this).addClass('active')
+                })
+            })
         }
 
     }
