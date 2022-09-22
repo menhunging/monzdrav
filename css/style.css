@@ -286,7 +286,20 @@ button {
   transition: color 0.3s;
 }
 .linkMail .icon {
+  position: relative;
   margin-right: 15px;
+}
+.linkMail .icon:before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  content: "\e900";
+  font-family: "icomoon" !important;
+  margin-left: 0;
 }
 .linkMail:hover {
   color: #d3145b;
@@ -303,7 +316,7 @@ button {
   -o-transition: color 0.3s;
   transition: color 0.3s;
 }
-.linkPhone .icon {
+.linkPhone .iconBl {
   display: none;
 }
 .linkPhone:hover {
@@ -312,27 +325,60 @@ button {
 
 .icon {
   position: relative;
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  width: 28px;
+  height: 28px;
   display: block;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #d3145b;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
 }
-.icon.iconMail {
-  background-image: url("../img/mail.svg");
+.icon:hover {
+  background-color: #9a063d;
 }
-.icon.iconVk {
-  background-image: url("../img/vk.svg");
+
+.iconAdress {
+  position: relative;
 }
-.icon.iconTelegram {
-  background-image: url("../img/telegram.svg");
+.iconAdress:before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  content: "\e904";
+  font-family: "icomoon" !important;
+  font-size: 16px;
+  margin-left: 1px;
 }
-.icon.iconWhatsApp {
-  background-image: url("../img/whatsapp.svg");
+.iconAdress:hover {
+  background-color: #d3145b;
 }
-.icon.iconAdress {
-  background-image: url("../img/marker.svg");
+
+.iconBl {
+  position: relative;
+  display: block;
+  color: #d3145b;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 28px;
+}
+.iconBl:hover {
+  color: #9a063d;
 }
 
 .siteTitle {
@@ -666,6 +712,9 @@ button {
 .header .linkMail {
   margin-left: 63px;
 }
+.header .linkMail .icon::before {
+  margin-left: -1px;
+}
 .header .social {
   margin-left: 50px;
 }
@@ -844,25 +893,8 @@ button {
   display: flex;
   align-items: center;
 }
-.social li a:hover {
-  -webkit-filter: drop-shadow(0px 0px 15px rgba(211, 20, 91, 0.8));
-  -moz-filter: drop-shadow(0px 0px 15px rgba(211, 20, 91, 0.8));
-  -ms-filter: drop-shadow(0px 0px 15px rgba(211, 20, 91, 0.8));
-  -o-filter: drop-shadow(0px 0px 15px rgba(211, 20, 91, 0.8));
-  filter: drop-shadow(0px 0px 15px rgba(211, 20, 91, 0.8));
-}
 .social li + li {
   margin-left: 10px;
-}
-.social .icon {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 .advBlockWrapper {
@@ -1387,7 +1419,7 @@ button {
 .selectList {
   position: relative;
   z-index: 5;
-  padding: 7px 34px 33px;
+  padding: 7px 55px 33px 15px;
   background-color: #f4f0f0;
   -webkit-border-radius: 30px 30px 0px 0px;
   -moz-border-radius: 30px 30px 0px 0px;
@@ -1400,9 +1432,6 @@ button {
   position: relative;
   width: calc(33.3333333333% - 68px);
   margin: 34px 34px 6px;
-}
-.selectList .selectItem:nth-child(3n)::before {
-  display: none;
 }
 .selectList .selectItem:last-child::before {
   display: none;
@@ -2024,6 +2053,9 @@ button {
 .footer .adress .icon {
   margin-right: 14px;
 }
+.footer .adress .adressTxt {
+  flex: 1;
+}
 .footer .copyRight {
   font-weight: 400;
   font-size: 12px;
@@ -2223,16 +2255,10 @@ button {
   }
 
   .selectList {
-    padding: 7px 15px 33px;
+    padding: 7px 45px 33px 15px;
   }
   .selectList .selectItem {
     width: calc(50% - 68px);
-  }
-  .selectList .selectItem:nth-child(3n)::before {
-    display: block;
-  }
-  .selectList .selectItem:nth-child(2n)::before {
-    display: none;
   }
 
   .resultCalc {
@@ -2438,7 +2464,7 @@ button {
   }
 
   .selectList {
-    padding: 15px 0;
+    padding: 15px 45px 15px 15px;
     justify-content: space-between;
   }
   .selectList .selectItem {
@@ -2474,6 +2500,10 @@ button {
     width: 100%;
   }
 
+  .selectList {
+    padding: 15px 0;
+  }
+
   .header .headerContent {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -2501,7 +2531,7 @@ button {
     display: flex;
     align-items: center;
   }
-  .header .linkPhone .icon {
+  .header .linkPhone .iconBl {
     display: block;
     margin-right: 15px;
   }
@@ -2679,7 +2709,6 @@ button {
     margin: 0 auto;
   }
   .footer .linkMail .icon {
-    display: table;
     margin: 0 auto 10px;
   }
 
@@ -2799,13 +2828,27 @@ button {
     padding: 6px 0;
     font-size: 12px;
   }
-  .header .linkPhone .icon {
+  .header .linkPhone .iconBl {
     margin-right: 8px;
   }
   .header .icon {
     width: 23px;
     height: 23px;
     background-size: contain;
+    font-size: 9px;
+  }
+  .header .icon::before {
+    margin: 0 !important;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    font-size: 9px;
+  }
+
+  .iconBl {
+    font-size: 23px;
   }
 
   .grettings {

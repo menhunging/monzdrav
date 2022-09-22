@@ -27,6 +27,11 @@
     }
     .linkMail {
         margin-left: 63px;
+        .icon {
+            &::before {
+                margin-left: -1px;
+            }
+        }
     }
     .social {
         margin-left: 50px;
@@ -184,18 +189,9 @@
     display: flex;
     align-items: center;
     li {
-        a {
-            &:hover {
-                @include filter(drop-shadow($shadow));
-            }
-        }
         & + li {
             margin-left: 10px;
         }
-    }
-    .icon {
-        @include border-radius(50%);
-        @include transition(all 0.3s);
     }
 }
 
@@ -689,7 +685,7 @@
 .selectList {
     position: relative;
     z-index: 5;
-    padding: 7px 34px 33px;
+    padding: 7px 55px 33px 15px;
     background-color: #f4f0f0;
     @include border-radius(30px 30px 0px 0px);
     display: flex;
@@ -698,11 +694,6 @@
         position: relative;
         width: calc(100% / 3 - 68px);
         margin: 34px 34px 6px;
-        &:nth-child(3n) {
-            &::before {
-                display: none;
-            }
-        }
         &:last-child {
             &::before {
                 display: none;
@@ -1264,6 +1255,9 @@
         color: #6a4b4b;
         .icon {
             margin-right: 14px;
+        }
+        .adressTxt {
+            flex: 1;
         }
     }
 

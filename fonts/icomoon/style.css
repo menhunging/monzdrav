@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?6uw073');
-  src:  url('fonts/icomoon.eot?6uw073#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?6uw073') format('truetype'),
-    url('fonts/icomoon.woff?6uw073') format('woff'),
-    url('fonts/icomoon.svg?6uw073#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?dq7nz2');
+  src:  url('fonts/icomoon.eot?dq7nz2#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dq7nz2') format('truetype'),
+    url('fonts/icomoon.woff?dq7nz2') format('woff'),
+    url('fonts/icomoon.svg?dq7nz2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,29 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-mail .path1:before {
+.icon-adress:before {
+  content: "\e904";
+}
+.icon-mail:before {
   content: "\e900";
-  color: rgb(211, 20, 91);
-}
-.icon-mail .path2:before {
-  content: "\e901";
-  margin-left: -1.0361328125em;
-  color: rgb(255, 255, 255);
-}
-.icon-mail .path3:before {
-  content: "\e902";
-  margin-left: -1.0361328125em;
-  color: rgb(255, 255, 255);
 }
 .icon-telegram:before {
-  content: "\e903";
-  color: #d3145b;
+  content: "\e901";
 }
 .icon-vk:before {
-  content: "\e904";
-  color: #d3145b;
+  content: "\e902";
 }
-.icon-whatsap:before {
-  content: "\e905";
-  color: #d3145b;
+.icon-wapp:before {
+  content: "\e903";
 }

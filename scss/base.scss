@@ -72,7 +72,13 @@ button {
     align-items: center;
     @include transition(color 0.3s);
     .icon {
+        position: relative;
         margin-right: 15px;
+        @include before {
+            content: "\e900";
+            font-family: "icomoon" !important;
+            margin-left: 0;
+        }
     }
     &:hover {
         color: #d3145b;
@@ -86,7 +92,7 @@ button {
     text-transform: uppercase;
     color: #6a4b4b;
     @include transition(color 0.3s);
-    .icon {
+    .iconBl {
         display: none;
     }
     &:hover {
@@ -96,26 +102,43 @@ button {
 
 .icon {
     position: relative;
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
+    width: 28px;
+    height: 28px;
     display: block;
-    background-position: center;
-    background-repeat: no-repeat;
-    &.iconMail {
-        background-image: url("../img/mail.svg");
+    background-color: #d3145b;
+    color: #fff;
+    @include border-radius(50%);
+    @include transition(all 0.3s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    &:hover {
+        background-color: #9a063d;
     }
-    &.iconVk {
-        background-image: url("../img/vk.svg");
+}
+
+.iconAdress {
+    position: relative;
+    @include before {
+        content: "\e904";
+        font-family: "icomoon" !important;
+        font-size: 16px;
+        margin-left: 1px;
     }
-    &.iconTelegram {
-        background-image: url("../img/telegram.svg");
+    &:hover {
+        background-color: #d3145b;
     }
-    &.iconWhatsApp {
-        background-image: url("../img/whatsapp.svg");
-    }
-    &.iconAdress {
-        background-image: url("../img/marker.svg");
+}
+
+.iconBl {
+    position: relative;
+    display: block;
+    color: #d3145b;
+    @include transition(all 0.3s);
+    font-size: 28px;
+    &:hover {
+        color: #9a063d;
     }
 }
 
