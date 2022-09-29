@@ -213,6 +213,7 @@ button {
             color: #c2b6b6;
         }
     }
+
     .selectric {
         width: 100%;
         height: 55px;
@@ -241,6 +242,76 @@ button {
                 display: none;
             }
         }
+    }
+}
+
+.item_calc__selected {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    border: 1px solid #c2b6b6;
+    @include border-radius(10px);
+    color: #6a4b4b;
+    padding: 18px 45px 18px 15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include before {
+        right: 0;
+        top: 0;
+        background-color: transparent;
+        background-image: url("../img/arrow.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 55px;
+        height: 100%;
+        @include transition(all 0.3s);
+    }
+}
+
+.item_calc__select {
+    background-color: #fff;
+    border: 1px solid #c2b6b6;
+    @include border-radius(10px);
+    overflow: hidden;
+    z-index: 9;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: none;
+    top: calc(100% + 1px);
+    .item_btn {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        min-height: 20px;
+        display: block;
+        padding: 10px;
+        color: #666;
+        cursor: pointer;
+        &:hover {
+            background-color: #d5d5d5;
+        }
+        &.disabled {
+        }
+        &.selected,
+        &.highlighted {
+            background-color: #d3145b;
+            color: #fff;
+        }
+    }
+}
+
+.show_element {
+    .item_calc__select {
+        display: block;
     }
 }
 

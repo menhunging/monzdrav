@@ -495,6 +495,87 @@ button {
   display: none;
 }
 
+.item_calc__selected {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background-color: #fff;
+  border: 1px solid #c2b6b6;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  color: #6a4b4b;
+  padding: 18px 45px 18px 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item_calc__selected:before {
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  background-image: url("../img/arrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 55px;
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.item_calc__select {
+  background-color: #fff;
+  border: 1px solid #c2b6b6;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: none;
+  top: calc(100% + 1px);
+}
+.item_calc__select .item_btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  min-height: 20px;
+  display: block;
+  padding: 10px;
+  color: #666;
+  cursor: pointer;
+}
+.item_calc__select .item_btn:hover {
+  background-color: #d5d5d5;
+}
+.item_calc__select .item_btn.selected, .item_calc__select .item_btn.highlighted {
+  background-color: #d3145b;
+  color: #fff;
+}
+
+.show_element .item_calc__select {
+  display: block;
+}
+
 .selectric-open .selectric .button {
   -moz-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
@@ -1433,20 +1514,9 @@ button {
   width: calc(33.3333333333% - 68px);
   margin: 34px 34px 6px;
 }
-.selectList .selectItem:last-child::before {
-  display: none;
-}
-.selectList .selectItem.selected::before {
-  background-color: #90e994;
-}
-.selectList .selectItem:before {
-  content: "";
-  display: block;
+.selectList .key_next {
+  cursor: pointer;
   position: absolute;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
   left: calc(100% + 15px);
   bottom: 12px;
   background-image: url("../img/arrow_calc.png");
@@ -1459,9 +1529,16 @@ button {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.selectList .key_next:hover, .selectList .key_next:disabled {
+  background-color: #90e994;
 }
 .selectList .name {
   font-weight: 700;
@@ -1482,7 +1559,7 @@ button {
   color: #c2b6b6;
   margin-top: 9px;
 }
-.selectList .inputWrapper {
+.selectList .item_calc__selected {
   margin-top: 20px;
 }
 
@@ -2609,7 +2686,7 @@ button {
     width: 100%;
     margin: 20px;
   }
-  .selectList .selectItem::before {
+  .selectList .selectItem .key_next {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
@@ -2621,8 +2698,8 @@ button {
     bottom: auto;
     margin-left: -16px;
   }
-  .selectList .selectItem:last-child::before {
-    display: none !important;
+  .selectList .selectItem:last-child {
+    margin-bottom: 50px;
   }
   .selectList .selectItem + .selectItem {
     margin-top: 40px;
@@ -2942,7 +3019,7 @@ button {
   .selectList {
     padding: 24px 0;
   }
-  .selectList .inputWrapper {
+  .selectList .item_calc__selected {
     margin-top: 14px;
   }
   .selectList .selectItem {
@@ -2953,7 +3030,7 @@ button {
   .selectList .selectItem .name {
     white-space: normal;
   }
-  .selectList .selectItem::before {
+  .selectList .selectItem .key_next {
     top: calc(100% + 25px);
   }
   .selectList .selectItem + .selectItem {

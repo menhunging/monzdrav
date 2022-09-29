@@ -694,29 +694,26 @@
         position: relative;
         width: calc(100% / 3 - 68px);
         margin: 34px 34px 6px;
-        &:last-child {
-            &::before {
-                display: none;
-            }
-        }
-        &.selected {
-            &::before {
-                background-color: #90e994;
-            }
-        }
-        @include before {
-            left: calc(100% + 15px);
-            bottom: 12px;
-            background-image: url("../img/arrow_calc.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 34px;
-            height: 34px;
-            background-color: #d7f2d8;
-            @include border-radius(50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    }
+    .key_next {
+        cursor: pointer;
+        position: absolute;
+        left: calc(100% + 15px);
+        bottom: 12px;
+        background-image: url("../img/arrow_calc.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 34px;
+        height: 34px;
+        background-color: #d7f2d8;
+        @include border-radius(50%);
+        @include transition(all 0.3s);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover,
+        &:disabled {
+            background-color: #90e994;
         }
     }
     .name {
@@ -738,7 +735,7 @@
         color: #c2b6b6;
         margin-top: 9px;
     }
-    .inputWrapper {
+    .item_calc__selected {
         margin-top: 20px;
     }
 }
