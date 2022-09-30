@@ -412,9 +412,19 @@ button {
 }
 
 .modal__container {
+    background-color: transparent;
+    max-width: 100%;
+    padding: 30px 10px;
+}
+
+.modal__content {
+    background-color: #fff;
     padding: 15px 60px;
     max-width: 600px;
     @include border-radius(20px);
+    padding: 30px;
+    position: relative;
+    margin: 0;
 }
 
 input,

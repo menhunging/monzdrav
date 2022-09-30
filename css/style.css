@@ -693,12 +693,22 @@ button {
 }
 
 .modal__container {
+  background-color: transparent;
+  max-width: 100%;
+  padding: 30px 10px;
+}
+
+.modal__content {
+  background-color: #fff;
   padding: 15px 60px;
   max-width: 600px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  margin: 0;
 }
 
 input,
@@ -2195,9 +2205,10 @@ button {
 .modal__close {
   position: absolute;
   width: 27px;
+  height: 27px;
   display: block;
   right: 27px;
-  top: 35px;
+  top: 25px;
 }
 .modal__close span {
   display: block;
@@ -2853,8 +2864,8 @@ button {
     padding: 0 15px;
   }
 
-  .modal__container {
-    padding: 15px 15px;
+  .modal__content {
+    padding: 55px 15px 15px;
   }
 
   .forWhomWrapper:before {
